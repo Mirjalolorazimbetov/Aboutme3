@@ -1,0 +1,726 @@
+@use "./font" as *;
+@use "./common.scss" as *;
+@use "./media.scss" as *;
+
+
+.Nav {
+    background: #000000;
+    padding: 15px 0;
+    height: 76px;
+    width: 100%;
+
+    @include media(600) {
+        height: 65px;
+    }
+
+    .nav_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_logo {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 46px;
+        color: #fff;
+
+        @include media(1000) {
+            font-size: 38px;
+        }
+
+        @include media(800) {
+            font-size: 36px;
+        }
+
+        @include media(700) {
+            font-size: 30px;
+        }
+
+        @include media(600) {
+            font-size: 27px;
+        }
+    }
+
+    .nav_list {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        transition: 0.5s ease-in-out;
+
+        @include media(1000) {
+            gap: 40px;
+        }
+
+        @include media(800) {
+            gap: 35px;
+        }
+
+        @include media(700) {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100px;
+            height: 60;
+            background-color: #000;
+            color: #fff;
+            flex-direction: column;
+            gap: 20px;
+            padding: 60px 5px 5px 5px;
+            border-radius: 0 6px 0 6px;
+            //   border: solid white 0.5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: 0.5s ease-in-out;
+        }
+
+
+        &.open {
+            @include media(700) {
+                display: flex;
+                right: 0;
+            }
+        }
+    }
+
+    .nav_link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 28px;
+
+
+        @include media(1100) {
+            font-size: 23px;
+        }
+
+        @include media(800) {
+            font-size: 21px;
+        }
+
+        @include media(700) {
+            font-size: 19px;
+        }
+    }
+}
+
+.Header {
+    .intro {
+        background-image: url(../images/introBg.png);
+        background-size: cover;
+        background-position: center;
+        height: 850px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include media(900) {
+            height: 800px;
+        }
+
+        @include media(800) {
+            height: 680px;
+        }
+
+        @include media(700) {
+            height: 560px;
+        }
+
+        @include media(500) {
+            height: 500px;
+        }
+
+        @include media(400) {
+            height: 450px;
+        }
+    }
+
+    .intro_title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 46px;
+        color: #000;
+        margin-bottom: 145px;
+        text-align: center;
+
+        @include media(1100) {
+            margin-bottom: 125px;
+        }
+
+        @include media(1000) {
+            font-size: 37px;
+        }
+
+        @include media(900) {
+            font-size: 36px;
+            margin-bottom: 115px;
+        }
+
+        @include media(800) {
+            font-size: 34px;
+            margin-bottom: 90px;
+        }
+
+        @include media(700) {
+            font-size: 30px;
+            margin-bottom: 60px;
+        }
+
+        @include media(500) {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        @include media(400) {
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .intro_link {
+        background-color: #fff;
+        font-family: Arial;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 40.25px;
+        text-decoration: none;
+        color: #000;
+        border-radius: 10px;
+        padding: 10px 24px;
+
+        @include media(1000) {
+            font-size: 33px;
+            padding: 8px 22px;
+        }
+
+        @include media(900) {
+            font-size: 30px;
+            padding: 7px 20px;
+        }
+
+        @include media(800) {
+            font-size: 28px;
+            padding: 6px 17px;
+            border-radius: 8px;
+        }
+
+        @include media(700) {
+            font-size: 26px;
+            padding: 4px 15px;
+        }
+
+        @include media(500) {
+            font-size: 24px;
+            padding: 3px 10px;
+        }
+
+        @include media(400) {
+            font-size: 22px;
+            padding: 2px 8px;
+        }
+    }
+}
+
+.Intro {
+    background: #0e1c25;
+    // height: 850px;
+    width: 100%;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 100px;
+
+    @include media(1100) {
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    @include media(1000) {
+        padding-top: 15px;
+        padding-bottom: 60px;
+    }
+
+    @include media(900) {
+        padding-bottom: 40px;
+    }
+
+    @include media(800) {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .about_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media(1100) {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        @include media(900) {
+            gap: 20px;
+        }
+
+        @include media(700) {
+            gap: 15px;
+        }
+
+        img {
+            @include media(900) {
+                width: 450px;
+            }
+
+            @include media(800) {
+                width: 400px;
+            }
+
+            @include media(700) {
+                width: 350px;
+            }
+
+            @include media(500) {
+                width: 300px;
+            }
+
+            @include media(400) {
+                width: 260px;
+            }
+        }
+    }
+
+    .about_card {
+        max-width: 500px;
+        width: 100%;
+
+        @include media(800) {
+            max-width: 430px;
+        }
+
+        @include media(700) {
+            max-width: 400px;
+        }
+
+        @include media(500) {
+            max-width: 350px;
+        }
+    }
+
+    .about_title {
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 40.25px;
+        margin-bottom: 64px;
+
+        @include media(1100) {
+            margin-bottom: 40px;
+        }
+
+        @include media(1000) {
+            margin-bottom: 30px;
+            font-size: 33px;
+            text-align: center;
+        }
+
+        @include media(900) {
+            margin-bottom: 20px;
+            font-size: 31px;
+        }
+
+        @include media(800) {
+            margin-bottom: 15px;
+            font-size: 29px;
+        }
+
+        @include media(700) {
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        @include media(500) {
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+    }
+
+    .about_text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20.7px;
+        text-align: justify;
+
+        @include media(1000) {
+            font-size: 17px;
+        }
+
+        @include media(900) {
+            font-size: 16px;
+        }
+
+        @include media(800) {
+            font-size: 15px;
+        }
+
+        @include media(700) {
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow-y: scroll;
+        }
+
+        @include media(500) {
+            font-size: 14px;
+            line-height: 135%;
+        }
+    }
+}
+
+.Main {
+    padding-top: 30px;
+    color: #fff;
+    padding-bottom: 70px;
+
+    @include media(1100) {
+        padding-bottom: 50px;
+        padding-top: 20px;
+    }
+
+    @include media(1000) {
+        padding-bottom: 40px;
+        padding-top: 15px;
+    }
+
+    @include media(800) {
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
+
+    @include media(500) {
+        padding-bottom: 20px;
+        padding-top: 8px;
+    }
+
+    .work_card {
+        width: 312px;
+        background: #b12b06;
+        padding: 15px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media(1100) {
+            width: 300px;
+        }
+
+        @include media(1000) {
+            width: 270px;
+        }
+
+        @include media(900) {
+            padding: 8px;
+            border-radius: 8px;
+            width: 250px;
+        }
+
+        @include media(800) {
+            padding: 5px;
+            width: 210px;
+        }
+
+        @include media(500) {
+            width: 200px;
+        }
+
+        img {
+            @include media(1000) {
+                width: 250px;
+            }
+
+            @include media(900) {
+                width: 230px;
+                margin-top: 10px;
+            }
+
+            @include media(800) {
+                width: 200px;
+                margin-top: 8px;
+            }
+
+            @include media(700) {
+                width: 190px;
+                margin-top: 5px;
+            }
+
+            @include media(500) {
+                width: 180px;
+
+            }
+        }
+    }
+
+    .work_title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 23px;
+        margin: 20px 0;
+
+        @include media(1000) {
+            font-size: 18px;
+            margin: 16px 0;
+        }
+
+        @include media(800) {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+    }
+
+    .work_text {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16.1px;
+        text-align: center;
+        // width: 264px;
+        margin-bottom: 27px;
+
+        @include media(1000) {
+            margin-bottom: 23px;
+        }
+
+        @include media(900) {
+            margin-bottom: 18px;
+            font-size: 13px;
+            line-height: 130%;
+        }
+
+        @include media(800) {
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow-y: scroll;
+        }
+
+        @include media(500) {
+            -webkit-line-clamp: 4;
+        }
+    }
+
+    .work_link {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 23px;
+        background: #ffffff;
+        padding: 8px 25px;
+        text-decoration: none;
+        color: #000;
+        border-radius: 10px;
+
+        @include media(1000) {
+            font-size: 18px;
+            padding: 8px 22px;
+        }
+
+        @include media(900) {
+            font-size: 17px;
+            padding: 7px 20px;
+            border-radius: 8px;
+        }
+
+        @include media(800) {
+            font-size: 16px;
+            padding: 4px 14px;
+            border-radius: 7px;
+        }
+
+        @include media(500) {
+            font-size: 15px;
+            padding: 3px 10px;
+        }
+    }
+}
+
+.title {
+    color: #fff;
+    text-align: center;
+    font-family: Arial;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    padding: 43px 0 62px 0;
+
+    @include media(1000) {
+        font-size: 37px;
+        padding: 35px 0 55px 0;
+    }
+
+    @include media(900) {
+        font-size: 36px;
+        padding: 25px 0 40px 0;
+    }
+
+    @include media(800) {
+        font-size: 34px;
+        padding: 20px 0 25px 0;
+    }
+
+    @include media(700) {
+        font-size: 31px;
+        padding: 15px 0 20px 0;
+    }
+
+    @include media(500) {
+        font-size: 29px;
+        padding: 10px 0 15px 0;
+    }
+}
+
+.main_bg {
+    background: #5c6b81;
+
+    .m_cards_box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        @include media(1000) {
+            gap: 20px;
+        }
+
+        @include media(700) {
+            gap: 15px;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+        }
+    }
+}
+
+.Footer {
+    background-color: #000;
+    padding: 50px 0;
+
+    @include media(1000) {
+        padding: 40px 0;
+    }
+
+    @include media(900) {
+        padding: 30px 0;
+    }
+
+    @include media(600) {
+        padding: 20px 0;
+    }
+
+    @include media(500) {
+        padding: 10px 0;
+    }
+
+    .footer_title {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 46px;
+        text-align: center;
+        margin-bottom: 30px;
+
+        @include media(1000) {
+            margin-bottom: 25px;
+            font-size: 37px;
+        }
+
+        @include media(900) {
+            margin-bottom: 20px;
+            font-size: 34px;
+        }
+
+        @include media(800) {
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        @include media(700) {
+            font-size: 30px;
+        }
+
+        @include media(700) {
+            font-size: 29px;
+
+        }
+    }
+
+    .footer_box {
+        display: flex;
+        justify-content: space-between;
+
+        @include media(1100) {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 130px;
+        }
+
+        @include media(900) {
+            gap: 100px;
+        }
+
+        @include media(700) {
+            gap: 80px;
+        }
+
+        @include media(600) {
+            gap: 60px;
+        }
+
+        @include media(500) {
+            gap: 35 px;
+           
+          
+        }
+
+        img {
+            @include media(900) {
+                width: 45px;
+            }
+
+            @include media(700) {
+                width: 40px;
+            }
+
+            @include media(600) {
+                width: 35px;
+            }
+            @include media(400) {
+                width: 30px;
+            }
+        }
+    }
+}
+
+.nav_menu {
+    display: none;
+
+    @include media(700) {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1100;
+
+        img {
+            width: 25px;
+            height: auto;
+            border-radius: 50%;
+        }
+    }
+}
+
+// #menu{
+//     display: none;
+//     @include media(700){
+
+//     }
+// }
